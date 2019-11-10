@@ -1,0 +1,62 @@
+PODS:
+  - AWSAuthCore (2.12.0):
+    - AWSCore (= 2.12.0)
+  - AWSAuthUI (2.12.0):
+    - AWSAuthCore (= 2.12.0)
+    - AWSCore (= 2.12.0)
+  - AWSCognitoIdentityProvider (2.12.0):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.12.0)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.12.0)
+  - AWSMobileClient (2.12.0):
+    - AWSAuthCore (= 2.12.0)
+    - AWSCognitoIdentityProvider (= 2.12.0)
+  - AWSS3 (2.12.0):
+    - AWSCore (= 2.12.0)
+  - AWSUserPoolsSignIn (2.12.0):
+    - AWSAuthCore (= 2.12.0)
+    - AWSCognitoIdentityProvider (= 2.12.0)
+  - HexColors (6.0.0)
+  - MBProgressHUD (1.1.0)
+  - RMessage (3.0.3):
+    - HexColors (~> 6.0)
+
+DEPENDENCIES:
+  - AWSAuthUI
+  - AWSMobileClient
+  - AWSS3
+  - AWSUserPoolsSignIn
+  - MBProgressHUD (~> 1.1.0)
+  - RMessage
+
+SPEC REPOS:
+  trunk:
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSS3
+    - AWSUserPoolsSignIn
+    - HexColors
+    - MBProgressHUD
+    - RMessage
+
+SPEC CHECKSUMS:
+  AWSAuthCore: 547617e1ed76a699b56018105133e23f0fddc8e2
+  AWSAuthUI: 198b81978538bca9fa17621f567154763afc9b13
+  AWSCognitoIdentityProvider: a4a37ca74ecce30ec534647e6aae89c7aff3348c
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 6573232b6b4339ce0ffcf8abd4215a412488f71f
+  AWSMobileClient: 88d0584901dbe6e7917267c657ff980c9bfd2363
+  AWSS3: 4cd97615f756098bfa449e99bf0acc7bc6a31510
+  AWSUserPoolsSignIn: 070293a3e73401bbc35fc639244b555b9d9f1aa8
+  HexColors: f8c66339541a74bb08905bfe7cd4f8cc85e9e173
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  RMessage: f6d768616d6afbc2c92a2451de9d7f7617b7195c
+
+PODFILE CHECKSUM: e0f14c98b91baf11045a8aa930f7bcb9eab7768a
+
+COCOAPODS: 1.8.3

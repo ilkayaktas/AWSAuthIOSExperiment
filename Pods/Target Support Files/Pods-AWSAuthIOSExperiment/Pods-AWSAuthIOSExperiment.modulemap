@@ -1,0 +1,6 @@
+framework module Pods_AWSAuthIOSExperiment {
+  umbrella header "Pods-AWSAuthIOSExperiment-umbrella.h"
+
+  export *
+  module * { export * }
+}
