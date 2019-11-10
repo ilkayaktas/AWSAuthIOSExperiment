@@ -1,0 +1,38 @@
+{
+    "UserAgent": "aws-amplify/cli",
+    "Version": "0.1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "AppSync": {
+        "Default": {
+            "ApiUrl": "XXXXXXXX",
+            "Region": "us-east-1",
+            "AuthMode": "API_KEY",
+            "ApiKey": "XXXXXXXX",
+            "ClientDatabasePrefix": "XXXXXXXX"
+        }
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:XXXXXXX",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-east-1_5JSIyBwmI",
+            "AppClientId": "XXXXXXXXX",
+            "AppClientSecret": "YYYYYYYY",
+            "Region": "us-east-1"
+        }
+    },
+    "S3TransferUtility": {
+        "Default": {
+            "Bucket": "XXXXXXXX",
+            "Region": "us-east-1"
+        }
+    }
+}
