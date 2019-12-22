@@ -8,7 +8,6 @@
 
 import UIKit
 import AWSMobileClient
-import AWSS3
 
 class StorageViewController: UIViewController {
 
@@ -16,31 +15,35 @@ class StorageViewController: UIViewController {
     var credentialProvider : AWSCognitoCredentialsProvider?
     let progressView: UIProgressView! = UIProgressView()
     
-    @objc var completionHandlerForUpload: AWSS3TransferUtilityUploadCompletionHandlerBlock?
-    @objc var completionHandlerForDownload: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
-    @objc var progressBlock: AWSS3TransferUtilityProgressBlock?
+//    @objc var completionHandlerForUpload: AWSS3TransferUtilityUploadCompletionHandlerBlock?
+//    @objc var completionHandlerForDownload: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+//    @objc var progressBlock: AWSS3TransferUtilityProgressBlock?
 
+    /*
     @objc lazy var transferUtility = {
         AWSS3TransferUtility.default()
     }()
+ */
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         progressView.progress = 0.0;
-        
+
+        /*
         self.createTransferUtility()
         
         self.uploadData()
         
         self.downloadData()
-        
+        */
     }
     
     @IBAction func signOutAction(_ sender: Any) {
-        AWSMobileClient.sharedInstance().signOut()
+        AWSMobileClient.default().signOut()
     }
     
+    /*
     func createTransferUtility(){
         //Setup the service configuration
         let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
@@ -94,10 +97,10 @@ class StorageViewController: UIViewController {
         let expression = AWSS3TransferUtilityUploadExpression()
         expression.progressBlock = progressBlock
         
-        print("Identity id: \(AWSMobileClient.sharedInstance().identityId!)")
+        print("Identity id: \(AWSMobileClient.default().identityId!)")
         transferUtility.uploadData(
             data,
-            key: "private/\(AWSMobileClient.sharedInstance().identityId!)/brainifia.png",
+            key: "private/\(AWSMobileClient.default().identityId!)/brainifia.png",
             contentType: "image/png",
             expression: expression,
             completionHandler: completionHandlerForUpload).continueWith { (task) -> AnyObject? in
@@ -147,7 +150,7 @@ class StorageViewController: UIViewController {
         }
         
         transferUtility.downloadData(
-            forKey: "private/\(AWSMobileClient.sharedInstance().identityId!)/brainifia1.png",
+            forKey: "private/\(AWSMobileClient.default().identityId!)/brainifia1.png",
             expression: expression,
             completionHandler: completionHandlerForDownload).continueWith { (task) -> AnyObject? in
                 if let error = task.error {
@@ -163,5 +166,5 @@ class StorageViewController: UIViewController {
                 return nil;
         }
     }
-
+    */
 }

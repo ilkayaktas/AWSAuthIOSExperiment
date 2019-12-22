@@ -47,7 +47,7 @@ class ForgotPasswordViewController: UIViewController {
     func forgotPassword(username: String){
         showProgressIndicator(view: self.view, text: "Confirmation Code Sending!")
         
-        AWSMobileClient.sharedInstance().forgotPassword(username: username) { (forgotPasswordResult, error) in
+        AWSMobileClient.default().forgotPassword(username: username) { (forgotPasswordResult, error) in
             
             hideAllProgressIndicators(view: self.view)
             
@@ -76,7 +76,7 @@ class ForgotPasswordViewController: UIViewController {
     func confirmForgotPassword(username: String, password: String, confirmationCode: String){
         showProgressIndicator(view: self.view, text: "Confirming!")
         
-        AWSMobileClient.sharedInstance().confirmForgotPassword(username: username, newPassword: password, confirmationCode: confirmationCode) { (forgotPasswordResult, error) in
+        AWSMobileClient.default().confirmForgotPassword(username: username, newPassword: password, confirmationCode: confirmationCode) { (forgotPasswordResult, error) in
             
             hideAllProgressIndicators(view: self.view)
             

@@ -14,7 +14,7 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         showProgressIndicator(view: view, text: "Signing In!")
-        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+        AWSMobileClient.default().initialize { (userState, error) in
             if let error = error {
                 showErrorMessage(title: "Error", message: "\(error.localizedDescription)")
                 return
@@ -29,7 +29,7 @@ class SplashViewController: UIViewController {
             // Check if user availability
             switch userState {
             case .signedIn:
-                print("\(userState.rawValue) \(AWSMobileClient.sharedInstance().getCredentialsProvider().identityId!) \(AWSMobileClient.sharedInstance().getCredentialsProvider().identityPoolId)")
+//                print("\(userState.rawValue) \(AWSMobileClient.default().getCredentialsProvider().identityId!) \(AWSMobileClient.default().getCredentialsProvider().identityPoolId)")
                 // Show home page
                 self.performSegue(withIdentifier: "segueToStorageFromSplash", sender: self)
                 break
@@ -41,13 +41,13 @@ class SplashViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToStorageFromSplash"{
             let destinationViewController = segue.destination as! StorageViewController
             
-            destinationViewController.credentialProvider = AWSMobileClient.sharedInstance().getCredentialsProvider()
+            destinationViewController.credentialProvider = AWSMobileClient.default().getCredentialsProvider()
         }
-    }
+    }*/
 
 }
 

@@ -9,7 +9,7 @@ target 'AWSAuthIOSExperiment' do
   pod 'AWSAuthUI'           # Optional dependency required to use drop-in UI
   pod 'AWSMobileClient'     # Required dependency for authentication
   pod 'AWSUserPoolsSignIn'  # Optional dependency required to use drop-in UI
-  pod 'AWSS3'
+#  pod 'AWSS3'
   
   #UI Elements
   pod 'RMessage'

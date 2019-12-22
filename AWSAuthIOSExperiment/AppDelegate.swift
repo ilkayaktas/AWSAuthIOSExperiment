@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AWSS3
 import AWSMobileClient
 
 @UIApplicationMain
@@ -19,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      handleEventsForBackgroundURLSession identifier: String,
                      completionHandler: @escaping () -> Void) {
         
-        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+        AWSMobileClient.default().initialize { (userState, error) in
             guard error == nil else {
                 print("Error initializing AWSMobileClient. Error: \(error!.localizedDescription)")
                 return
@@ -28,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //provide the completionHandler to the TransferUtility to support background transfers.
-        AWSS3TransferUtility.interceptApplication(application,
+        /*AWSS3TransferUtility.interceptApplication(application,
                                                   handleEventsForBackgroundURLSession: identifier,
-                                                  completionHandler: completionHandler)
+                                                  completionHandler: completionHandler)*/
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

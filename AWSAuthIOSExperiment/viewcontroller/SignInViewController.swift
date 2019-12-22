@@ -21,13 +21,13 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToStorage"{
             let destinationViewController = segue.destination as! StorageViewController
             
-            destinationViewController.credentialProvider = AWSMobileClient.sharedInstance().getCredentialsProvider()
+            destinationViewController.credentialProvider = AWSMobileClient.default().getCredentialsProvider()
         }
-    }
+    }*/
     
     @IBAction func signInAction(_ sender: Any) {
         guard let username = usernameView.text, username != "",
@@ -42,7 +42,7 @@ class SignInViewController: UIViewController {
     func signIn(username: String, password: String){
         
         showProgressIndicator(view: self.view, text: "Signing In!")
-        AWSMobileClient.sharedInstance().signIn(username: username, password: password, completionHandler: {
+        AWSMobileClient.default().signIn(username: username, password: password, completionHandler: {
             (signInResult, error) in
             
             hideAllProgressIndicators(view: self.view)
@@ -68,7 +68,7 @@ class SignInViewController: UIViewController {
     }
     
     func forgotPassword(username: String){
-        AWSMobileClient.sharedInstance().forgotPassword(username: username) { (forgotPasswordResult, error) in
+        AWSMobileClient.default().forgotPassword(username: username) { (forgotPasswordResult, error) in
             if let forgotPasswordResult = forgotPasswordResult {
                 switch(forgotPasswordResult.forgotPasswordState) {
                 case .confirmationCodeSent:
@@ -83,7 +83,7 @@ class SignInViewController: UIViewController {
     }
     
     func confirmForgotPassword(username: String, password: String, confirmationCode: String){
-        AWSMobileClient.sharedInstance().confirmForgotPassword(username: username, newPassword: password, confirmationCode: confirmationCode) { (forgotPasswordResult, error) in
+        AWSMobileClient.default().confirmForgotPassword(username: username, newPassword: password, confirmationCode: confirmationCode) { (forgotPasswordResult, error) in
             if let forgotPasswordResult = forgotPasswordResult {
                 switch(forgotPasswordResult.forgotPasswordState) {
                 case .done:
